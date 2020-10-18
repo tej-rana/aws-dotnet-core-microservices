@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AwsMicroservices.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AwsMicroservices.Web.Controllers
 {
@@ -17,7 +18,9 @@ namespace AwsMicroservices.Web.Controllers
         {
             _logger = logger;
         }
+        
 
+        [Authorize]
         public IActionResult Index()
         {
             return View();

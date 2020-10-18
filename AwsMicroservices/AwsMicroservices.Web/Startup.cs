@@ -32,6 +32,10 @@ namespace AwsMicroservices.Web
                 config.Password.RequireUppercase = false;
                 config.Password.RequireNonAlphanumeric = false;
             });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Accounts/Login";
+            });
             services.AddControllersWithViews();
         }
 
